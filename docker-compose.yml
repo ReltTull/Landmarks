@@ -1,0 +1,23 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    ports:
+      - 5433:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: landmarks-db-pg-13.3
+
+  app:
+    build: .
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5433/landmarks-db-pg-13.3
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 1234
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
