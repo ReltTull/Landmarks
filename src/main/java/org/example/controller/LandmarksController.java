@@ -10,11 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/landmarks")
 public class LandmarksController {
+
+    private final LandmarksService landmarksService;
     @Autowired
-    private LandmarksService service;
+    public LandmarksController(LandmarksService landmarksService) {
+        this.landmarksService = landmarksService;
+    }
 
     @GetMapping("/test-connection")
     public String testConnection() {
-        return "Count " + service.test();
+        return "Count " + landmarksService.test();
     }
 }
