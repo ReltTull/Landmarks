@@ -1,7 +1,6 @@
 org\example\config\ApplicationConfig.class
 org\example\Main.class
 org\example\entity\Location.class
-org\example\config\DataSourceConfig.class
 org\example\controller\LandmarksController.class
 org\example\entity\LandmarkType.class
 org\example\repository\LandmarksRepository.class

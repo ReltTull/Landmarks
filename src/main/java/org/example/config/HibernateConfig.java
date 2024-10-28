@@ -34,6 +34,7 @@ public class HibernateConfig {
 
         return em;
     }
+
     @Bean
     public JpaTransactionManager transactionManager(LocalContainerEntityManagerFactoryBean entityManagerFactory) {
         JpaTransactionManager transactionManager = new JpaTransactionManager();

@@ -1,6 +1,5 @@
 package org.example.controller;
 
-import org.example.repository.LandmarksRepository;
 import org.example.service.LandmarksService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +18,6 @@ public class LandmarksController {
 
     @GetMapping("/test-connection")
     public String testConnection() {
-        return "Count " + landmarksService.test();
+        return landmarksService.test();
     }
 }
